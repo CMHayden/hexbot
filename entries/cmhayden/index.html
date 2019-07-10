@@ -43,5 +43,71 @@
             <h1 class="text">IDEA </h1>
         </div>
     </div>
+
+
+    <script src="//daybrush.com/scenejs/release/latest/dist/scene.min.js"></script>
+
+    <script>
+        function fun(){
+            var scene = new Scene({
+            ".text": function(i) {
+                return {
+                0: {
+                    transform: "scale(.7)",
+                    opacity: 0,
+                    color: '#ffffff'
+                },
+                1: {
+                    transform: "scale(1)",
+                    opacity: 1,
+                    color: setColor()
+                    
+                },
+                2: {
+                    color: "'" + setColor() + "'"
+                },
+                3: {
+                    color: setColor()
+                },
+                4: {
+                    color: setColor()
+                },
+                5: {
+                    color: setColor()
+                },
+                6: {
+                    color: setColor()
+                },
+                7: {
+                    color: setColor()
+                },
+                8: {
+                    color: setColor()
+                },
+                9: {
+                    color: setColor()
+                },
+                10: {
+                    color: setColor()
+                },
+                options: {
+                    delay: i * .5
+                }
+            }
+            }
+        },
+        {
+            easing: Scene.EASE_IN_OUT,
+            selector: true
+        }).playCSS();
+
+        function setColor() {
+            const hexMax = 256 * 256 * 256;
+            
+            return '#' + Math.floor(Math.random() * hexMax).toString(16).toUpperCase().padStart(6, '0');
+        }
+    }
+   
+    </script>
 </body>
 </html>
